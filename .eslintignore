@@ -1,0 +1,9 @@
+/dist
+/release
+/node_modules
+*.scss
+*.json
+*.md
+
+auto-imports.d.ts
+components.d.ts
