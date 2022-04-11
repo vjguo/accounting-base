@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import type { QiankunWindow } from '@/plugins/qiankun'
 
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory((window as QiankunWindow).__POWERED_BY_QIANKUN__ ? '/#/base' : '/'),
+  history: createWebHistory((window as QiankunWindow).__POWERED_BY_QIANKUN__ ? '/base/' : '/'),
   routes
 })
 
