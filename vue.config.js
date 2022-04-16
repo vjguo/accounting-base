@@ -21,6 +21,17 @@ module.exports = {
       libraryTarget: 'umd'
     }
   },
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => ({
+        ...options,
+        compilerOptions: {
+          isCustomElement: tag => tag.startsWith('a-')
+        }
+      }))
+  },
   devServer: {
     port: 8081,
     headers: {

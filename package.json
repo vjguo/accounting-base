@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "dexie": "^3.2.1",
     "element-plus": "^2.1.8",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
@@ -23,6 +24,7 @@
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vongolajs/types-accounting": "^1.0.5",
     "@vue/cli-plugin-e2e-cypress": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",

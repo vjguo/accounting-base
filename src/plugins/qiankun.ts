@@ -4,11 +4,12 @@ import router from '@/router'
 import store from '@/store'
 import type { App } from 'vue'
 
-export interface QiankunWindow extends Window {
-  __POWERED_BY_QIANKUN__?: boolean
-  __INJECTED_PUBLIC_PATH_BY_QIANKUN__?: string
+declare global {
+  interface Window {
+    __POWERED_BY_QIANKUN__?: boolean
+    __INJECTED_PUBLIC_PATH_BY_QIANKUN__?: string
+  }
 }
-
 interface QiankunProps {
   container: HTMLElement
 }
@@ -21,7 +22,7 @@ function getRenderContainer(props: QiankunProps) {
 }
 
 export function isPoweredByQiankun() {
-  return (window as QiankunWindow).__POWERED_BY_QIANKUN__
+  return window.__POWERED_BY_QIANKUN__
 }
 
 export async function bootstrap() {
@@ -29,6 +30,7 @@ export async function bootstrap() {
 }
 
 export async function mount(props: QiankunProps) {
+  console.log(props)
   app = createApp(AppComponent).use(store).use(router)
   app.mount(getRenderContainer(props))
 }
