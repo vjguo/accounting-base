@@ -14,8 +14,7 @@
     "isolatedModules": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "typeRoots": ["node_modules/@types", "node_modules/@vongolajs"],
-    "types": ["webpack-env", "jest", "types-accounting"],
+    "types": ["webpack-env", "jest"],
     "paths": {
       "@/*": ["src/*"]
     },

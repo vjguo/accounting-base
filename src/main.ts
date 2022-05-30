@@ -6,8 +6,6 @@ import '@/public-path'
 import { isPoweredByQiankun } from '@/plugins/qiankun'
 export { bootstrap, mount, unmount, update } from '@/plugins/qiankun'
 
-function mount() {
-  createApp(App).use(store).use(router).mount('#app')
-}
+export const app = createApp(App).use(router).use(store)
 
-isPoweredByQiankun() || mount()
+isPoweredByQiankun() || app.mount('#app')

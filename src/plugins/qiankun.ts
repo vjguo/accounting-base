@@ -1,9 +1,6 @@
-import { createApp } from 'vue'
-import AppComponent from '@/App.vue'
-import router from '@/router'
-import store from '@/store'
-import type { App } from 'vue'
-
+import type { AccountingDatabase } from '@vongolajs/types-accounting'
+import { app } from '@/main'
+import { useDatabaseStore } from '@/store/database-store'
 declare global {
   interface Window {
     __POWERED_BY_QIANKUN__?: boolean
@@ -12,9 +9,8 @@ declare global {
 }
 interface QiankunProps {
   container: HTMLElement
+  database: AccountingDatabase
 }
-
-let app: App | null
 
 function getRenderContainer(props: QiankunProps) {
   const { container } = props
@@ -30,14 +26,13 @@ export async function bootstrap() {
 }
 
 export async function mount(props: QiankunProps) {
-  console.log(props)
-  app = createApp(AppComponent).use(store).use(router)
-  app.mount(getRenderContainer(props))
+  const databaseStore = useDatabaseStore()
+  databaseStore.database = props.database
+  app.mount(getRenderContainer(props) as Element)
 }
 
 export async function unmount() {
   app?.unmount()
-  app = null
 }
 
 export async function update(props: QiankunProps) {

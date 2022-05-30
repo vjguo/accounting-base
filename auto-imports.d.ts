@@ -3,6 +3,9 @@
 declare global {
   const ElButton: typeof import('element-plus/es')['ElButton']
   const ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+  const ElIcon: typeof import('element-plus/es')['ElIcon']
   const ElSpace: typeof import('element-plus/es')['ElSpace']
+  const ElTable: typeof import('element-plus/es')['ElTable']
+  const ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
 }
 export {}
